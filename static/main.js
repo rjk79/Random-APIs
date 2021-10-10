@@ -811,7 +811,7 @@ fetch("https://www.thecocktaildb.com/api/json/v1/1/random.php", {
                 }" alt="random cocktail" class="card-img-top"/>
                 <h6 class="font-bold">Ingredients</h6>
                 <ul>
-                  ${filteredIngredients.join("")} 
+                  ${filteredIngredients.join("")}
                 </ul>
                 <h6 class="font-bold">Instructions</h6>
                 <p>${drinkObj.strInstructions}</p>
@@ -1187,6 +1187,38 @@ fetch("https://taylorswiftapi.herokuapp.com/get", {
                 &nbsp;
                 <a href="https://taylorswiftapi.herokuapp.com/"
                   class="btn btn-outline-dark btn-sm"><i class="fa fa-link mr-2" aria-hidden="true"></i>TAYLOR SWIFT API</a>
+              </div>
+            </div>
+          </div>
+        `;
+    loading.style.display = "none";
+    responsesBody.innerHTML += response;
+  });
+
+//Taylor swift api
+loading.style.display = "block";
+fetch("https://www.dnd5eapi.co/api/spells/acid-arrow", {
+  method: "GET",
+})
+  .then((res) => res.json())
+  .then((data) => {
+    let response = `
+        <div class="col-lg-12 mb-4">
+            <div class="card">
+              <div class="card-body">
+                <h4 class="card-title">Dungeons and Dragons</h4>
+                <h5 class="card-text mt-4">${data.desc}</h5>
+                <br />
+                <a href="https://github.com/rjk79" class="username">
+                  <img
+                    src="https://avatars.githubusercontent.com/rjk79"
+                    alt="DP"
+                    class="rounded-circle img-fluid mr-2"
+                    width="40"
+                    height="40"/>rjk79</a>
+                &nbsp;
+                <a href="https://www.dnd5eapi.co//"
+                  class="btn btn-outline-dark btn-sm"><i class="fa fa-link mr-2" aria-hidden="true"></i>DND 5E API</a>
               </div>
             </div>
           </div>
